@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fewus PolyClinicss</title>
+  <!-- Tailwind CSS (from CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Link to custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50 text-gray-800">
+  
+  <!-- Navbar -->
+  <nav class="bg-blue-600 text-white p-6 flex justify-between">
+    <h1 class="text-xl font-bold">Fewus PolyClinic</h1>
+    <div class="space-x-4">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="text-center py-20 bg-blue-100">
+    <h2 class="text-4xl font-bold">Welcome to Fewus Polyclinic</h2>
+    <p class="mt-4 text-lg">A Multiservice Medical Facility with expert Professionals and a state of art technology Lab in Addis Ababa</p>
+    <a href="#contact" class="mt-6 inline-block bg-blue-600 text-white px-6 py-3 rounded-lg">Book Appointment</a>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="p-10">
+    <h2 class="text-2xl font-bold mb-4">About Us</h2>
+    <p>Fewus Polyclinic is a modern health facility located in Addis Ababa, Ethiopia, dedicated to delivering high-quality, patient-centered medical care. Our focus is on Maternal and Child Health (MCH) services, complemented by general outpatient, minor surgical, and laboratory services.
+
+We believe that every mother and child deserves compassionate, reliable, and affordable healthcare. With a team of highly qualified professionals, we provide comprehensive services ranging from antenatal and postnatal care, safe delivery, pediatric consultations, emergency surgical care, to preventive health education.</p>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="p-10 bg-green-100">
+    <h2 class="text-2xl font-bold mb-6">Our Services</h2>
+    <ul class="space-y-2">
+      <li>✅ General Outpatient Services</li>
+      <li>✅ Laboratory Services</li>
+      <li>✅ Ultra Sound Services
+      <li>✅ Antenatal & Postnatal Care</li>
+      <li>✅ Delivery Services</li>
+      <li>✅ Pediatric Consultations</li>
+      <li>✅ Minor Surgeries including Male Circumcision</li>
+      <li>✅ Emergency Care</li>
+      <li>✅ Chronic Disease Management
+      <li>✅ Health Education & Counseling</li>
+      <li>✅ Vaccination Services</li>
+      <li>✅ Family Planning Reproductive health Services</li>
+    </ul>
+  </section>
+
+  <section class="my-10">
+  <h2 class="text-2xl font-bold text-center mb-6">Our Clinic Album</h2>
+  <div class="slideshow-container max-w-3xl mx-auto relative rounded-2xl overflow-hidden shadow-lg">
+
+    <!-- Slides -->
+    <img class="mySlides" src="images/clinic1" alt="Clinic Photo 1">
+    <img class="mySlides" src="images/clinic2" alt="Clinic Photo 2">
+    <img class="mySlides" src="images/clinic3" alt="Clinic Photo 3">
+    <img class="mySlides" src="images/clinic4" alt="Clinic Photo 4">
+
+  </div>
+</section>
+
+<style>
+  .mySlides {
+    display: none;
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+  }
+</style>
+
+<script>
+  let slideIndex = 0;
+  let slides = document.getElementsByClassName("mySlides");
+
+  // Try loading images with .jpg or .JPG
+  for (let i = 0; i < slides.length; i++) {
+    let baseSrc = slides[i].getAttribute("src");
+    let img = new Image();
+    img.src = baseSrc + ".jpg"; // try lowercase
+    img.onload = () => slides[i].src = img.src;
+    img.onerror = () => { 
+      slides[i].src = baseSrc + ".JPG"; // fallback to uppercase
+    };
+  }
+
+  // Show first slide
+  if (slides.length > 0) {
+    slides[0].style.display = "block";
+  }
+
+  function showSlides() {
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) { slideIndex = 1 }
+    slides[slideIndex - 1].style.display = "block";  
+    setTimeout(showSlides, 3000); // every 3 sec
+  }
+
+  showSlides();
+</script>
+
+
+<!-- JavaScript for Auto Slideshow -->
+<script>
+  let slideIndex = 0;
+  showSlides();
+
+  function showSlides() {
+    let slides = document.getElementsByClassName("mySlides");
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}    
+    slides[slideIndex-1].style.display = "block";  
+    setTimeout(showSlides, 3000); // Change image every 3 seconds
+  }
+</script>
+
+
+  <!-- Booking CTA -->
+<section id="book" class="py-16 bg-brand-light">
+<div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-8 items-center">
+<div>
+<h2 class="text-2xl md:text-3xl font-bold">Book an Appointment</h2>
+<p class="mt-2 text-gray-700">Click to call or leave us a voice message. We’re here to help.</p>
+</div>
+<div class="flex flex-wrap gap-3">
+<a href="tel:+251924230046" class="inline-flex items-center rounded-xl bg-brand px-5 py-3 text-white hover:bg-brand-dark">Call Now</a>
+<a href="https://wa.me/251924230046" target="_blank" rel="noopener" class="inline-flex items-center rounded-xl border border-gray-300 px-5 py-3 bg-white hover:bg-gray-50">WhatsApp</a>
+</div>
+</div>
+</section>
+
+
+<!-- Hours -->
+<section id="hours" class="py-16">
+<div class="max-w-6xl mx-auto px-4">
+<h2 class="text-2xl md:text-3xl font-bold">Clinic Hours</h2>
+<div class="mt-6 overflow-x-auto">
+<table class="w-full text-left text-sm">
+<thead>
+<tr class="text-gray-600">
+<th class="py-3">Day</th>
+<th class="py-3">Opening</th>
+<th class="py-3">Closing</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-gray-200">
+<tr><td class="py-3">Monday</td><td>8:00</td><td>20:00</td></tr>
+<tr><td class="py-3">Tuesday</td><td>8:00</td><td>20:00</td></tr>
+<tr><td class="py-3">Wednesday</td><td>8:00</td><td>20:00</td></tr>
+<tr><td class="py-3">Thursday</td><td>8:00</td><td>20:00</td></tr>
+<tr><td class="py-3">Friday</td><td>8:00</td><td>20:00</td></tr>
+<tr><td class="py-3">Saturday</td><td>9:00</td><td>18:00</td></tr>
+<tr><td class="py-3">Sunday</td><td>Closed</td><td>Closed</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="p-10">
+    <h2 class="text-2xl font-bold mb-4">Contact Us</h2>
+    <p>📍 Gedera at the Inlet of Yeka Abado Condo, Addis Ababa, Ethiopia</p>
+    <p>📞 +251 924230046/0911712365</p>
+    <p>📧 info@fewuspolyclinic.com</p>
+
+    <!-- Example Contact Form -->
+    <form id="contactForm" class="mt-6 space-y-4 max-w-md">
+      <input type="text" placeholder="Your Name" class="w-full p-2 border rounded" required>
+      <input type="email" placeholder="Your Phone number" class="w-full p-2 border rounded" required>
+      <textarea placeholder="Your Message" class="w-full p-2 border rounded" required></textarea>
+      <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded">Send</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-blue-600 text-white text-center p-4 mt-10">
+    &copy; 2025 Fewus Polyclinic. All Rights Reserved.
+  </footer>
+
+  <!-- Link JS -->
+  <script src="script.js"></script>
+</body>
+</html>
